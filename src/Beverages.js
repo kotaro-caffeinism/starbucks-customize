@@ -3,6 +3,9 @@ const fs = require("fs");
 const jsonDrinks = fs.readFileSync("./data/beverages.json");
 const drinks = JSON.parse(jsonDrinks);
 
+const jsonQuestions = fs.readFileSync("./data/questions.json");
+const questions = JSON.parse(jsonQuestions);
+
 class Beverage {
   constructor(id, name, price) {
     this.id = id;
@@ -18,16 +21,6 @@ class StarbucksBeverage extends Beverage {
     this.discountCustomize = discount ? discount : null;
   }
 }
-
-// const beverage1 = new StarbucksBeverage(
-//   drinks[0].drinkId,
-//   drinks[0].name,
-//   drinks[0].price,
-//   ["decaf", "form milk"],
-//   ["milk"],
-// );
-
-// console.log(beverage1);
 
 const dripCoffee = new StarbucksBeverage(
   drinks[0].drinkId,
@@ -150,7 +143,11 @@ class Shop {
       caffèAmericanoHot,
       caffèAmericanoIce,
     ];
-
+    this.selected = {
+      beverage: undefined,
+      size: undefined,
+    };
+    this.check = 0;
     this.till = {
       10: 0,
       50: 0,
@@ -159,9 +156,16 @@ class Shop {
       1000: 0,
     };
   }
-}
 
-const shop = new Shop();
-console.log(shop.beverages);
+  chooseBeverage(id) {
+    this.selected.beverage = this.beverages[id - 1];
+  }
+
+  chooseSize(size) {
+    // console.log(sizeName)
+    this.selected.size = questions[0].name[size];
+    this.check = +this.selected.beverage.price[size];
+  }
+}
 
 module.exports = Shop;
