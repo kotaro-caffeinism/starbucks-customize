@@ -150,14 +150,20 @@ class Shop {
     };
   }
 
+  getAllBeverage() {
+    return this.beverages;
+  }
+
   chooseBeverage(id) {
     this.selected.beverage = this.beverages[id - 1];
+    return this.selected.beverage;
   }
 
   chooseSize(size) {
     // console.log(sizeName)
     this.selected.size = questions[0].name[size];
     this.check = +this.selected.beverage.price[size];
+    return this.selected.size;
   }
 }
 
