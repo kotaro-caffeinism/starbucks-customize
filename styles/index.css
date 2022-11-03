@@ -1,22 +1,25 @@
 body,
 button {
-  margin: 5px;
+  margin: 0;
   font-family: 'Kosugi Maru', sans-serif;
 }
 
-#drink-wrap,
-#drink-wrap,
-.drink-wrap__customize {
+#drink-wrap {
   display: flex;
-  flex-wrap: wrap
+  flex-wrap: wrap;
+  margin: 20px 0;
 }
 
-.drink-wrap__title {
+.customize-wrap__title {
   font-size: 24px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #1e3932;
+  padding-bottom: 3px;
 }
-.drink-wrap__customize {
-  margin-bottom: 20px;
+.customize-wrap__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
 }
 .drink-wrap__menu {
   width: 18%;
@@ -31,18 +34,35 @@ button {
 }
 .drink-wrap__img {
   width: 100%;
+  border-radius: 12px;
 }
 .drink-wrap__name {
   font-size: 12px;
 }
 
-#drink-wrap__customize {
-  margin-top: 30px;
+#final-wrap {
+  margin-top: 15px;
+  font-size: 24px;
+}
+#final-wrap__name {
+  margin: 0 10px 10px;
+  /* margin-bottom: 10px; */
+}
+#final-wrap__price {
+  font-size: 24px;
+  text-align: center;
+}
+
+#customize-wrap {
+  height: 60vh;
+  padding: 20px 5px;
+  overflow-y: scroll;
+  background: rgba(0,0,0,.05);
 }
 
 #submit {
   text-align: center;
-  border: 1px solid #333;
+  border: 1px solid #008000;
   margin: 30px 30%;
   padding: 5px;
 }
@@ -52,16 +72,25 @@ button {
   border: 1px solid #fff;
 }
 
-.drink-active {
-  width: 19%;
-  max-width: 160px;
-  box-shadow: 3px 3px 3px 3px rgba(0,0,0,0.3);
+#reload {
+  cursor: pointer;
+  text-align: right;
+  margin-right: 30px;
+  margin-bottom: 30px;
 }
-.drink-active .drink-wrap__name {
-  padding: 2px;
+#reload:hover {
+  margin-right: 30px;
+  color: #008000;
+}
+
+.selected_drink {
+  margin: 0 auto;
 }
 .active {
   background: #008000;
   color: #fff;
+}
+.disp_none {
+  display: none;
 }
 
