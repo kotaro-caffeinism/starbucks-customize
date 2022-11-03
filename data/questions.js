@@ -1,4 +1,4 @@
-[
+window.questions = [
   {
     "type": "size",
     "choices": ["Short サイズ", "Tall サイズ", "Grande サイズ", "Venti サイズ"],
