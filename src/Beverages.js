@@ -164,6 +164,19 @@ class Shop {
       if (obj.type === type) return obj;
     }
   }
+
+  memorizeName(customize) {
+    this.selected.customize = this.selected.customize
+      ? `${this.selected.customize} ${customize}`
+      : customize;
+
+    return `${this.selected.beverage.name} ${this.selected.customize}`;
+  }
+
+  calcSum(sum) {
+    this.check += sum;
+    return this.check
+  }
 }
 
 module.exports = Shop;

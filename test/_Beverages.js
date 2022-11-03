@@ -59,4 +59,24 @@ describe("Starbucks shop", () => {
       });
     });
   });
+  describe("memorizeName", () => {
+    it("should memorize drink and customize", () => {
+      const shop = new Shop();
+      shop.chooseBeverages(1);
+      expect(shop.memorizeName("Short")).to.equal(
+        "ドリップコーヒー (HOT) Short"
+      );
+      expect(shop.memorizeName("ディカフェ")).to.equal(
+        "ドリップコーヒー (HOT) Short ディカフェ"
+      );
+    });
+  });
+  describe("calcSum", () => {
+    it("should calc Sum", () => {
+      const shop = new Shop();
+      shop.chooseBeverages(1);
+      expect(shop.calcSum(290)).to.equal(290);
+      expect(shop.calcSum(50)).to.equal(340);
+    });
+  });
 });
