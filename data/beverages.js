@@ -4,14 +4,16 @@ window.drinks = [
     "name": "ドリップコーヒー (HOT)",
     "name_en": "Drip coffee",
     "price": ["290", "330", "370", "410"],
-    "type": ["size", "decaf", "syrup", "source", "whip", "shot"]
+    "type": ["size", "decaf", "syrup", "source", "whip", "shot"],
+    "image": "https://asset.menu.starbucks.co.jp/public/sku_images/4524785000018/4524785000018_11_s.jpg"
   },
   {
     "drinkId": "2",
     "name": "アイスコーヒー (ICE)",
     "name_en": "Ice Coffee",
     "price": ["290", "330", "370", "410"],
-    "type": ["size", "decaf", "syrup", "source", "shot", "ice"]
+    "type": ["size", "decaf", "syrup", "source", "shot", "ice"],
+    "image": "https://asset.menu.starbucks.co.jp/public/sku_images/4524785000018/4524785000018_11_s.jpg"
   },
   {
     "drinkId": "3",
@@ -28,7 +30,8 @@ window.drinks = [
       "whip",
       "shot",
       "hot"
-    ]
+    ],
+    "image": "https://asset.menu.starbucks.co.jp/public/sku_images/4524785062870/4524785062870_11_s.jpg"
   },
   {
     "drinkId": "4",
@@ -45,14 +48,16 @@ window.drinks = [
       "whip",
       "shot",
       "hot"
-    ]
+    ],
+    "image": "https://asset.menu.starbucks.co.jp/public/sku_images/4524785000223/4524785000223_11_s.jpg"
   },
   {
     "drinkId": "5",
     "name": "スターバックス ラテ (ICE)",
     "name_en": "Starbucks Latte",
     "price": ["340", "380", "420", "460"],
-    "type": ["size", "decaf", "milk", "syrup", "source", "whip", "shot", "ice"]
+    "type": ["size", "decaf", "milk", "syrup", "source", "whip", "shot", "ice"],
+    "image": "https://asset.menu.starbucks.co.jp/public/sku_images/4524785000223/4524785000223_11_s.jpg"
   },
   {
     "drinkId": "6",
@@ -69,7 +74,8 @@ window.drinks = [
       "whip",
       "shot",
       "hot"
-    ]
+    ],
+    "image": "https://asset.menu.starbucks.co.jp/public/sku_images/4524785000285/4524785000285_11_s.jpg"
   },
   {
     "drinkId": "7",
@@ -86,7 +92,8 @@ window.drinks = [
       "whip",
       "shot",
       "hot"
-    ]
+    ],
+    "image": "https://asset.menu.starbucks.co.jp/public/sku_images/4524785000254/4524785000254_11_s.jpg"
   },
   {
     "drinkId": "8",
@@ -103,7 +110,8 @@ window.drinks = [
       "whip",
       "shot",
       "ice"
-    ]
+    ],
+    "image": "https://asset.menu.starbucks.co.jp/public/sku_images/4524785000254/4524785000254_11_s.jpg"
   },
   {
     "drinkId": "9",
@@ -120,7 +128,8 @@ window.drinks = [
       "whip",
       "shot",
       "hot"
-    ]
+    ],
+    "image": "https://asset.menu.starbucks.co.jp/public/sku_images/4524785034532/4524785034532_11_s.jpg"
   },
   {
     "drinkId": "10",
@@ -137,7 +146,8 @@ window.drinks = [
       "whip",
       "shot",
       "ice"
-    ]
+    ],
+    "image": "https://asset.menu.starbucks.co.jp/public/sku_images/4524785034532/4524785034532_11_s.jpg"
   },
   {
     "drinkId": "11",
@@ -154,27 +164,31 @@ window.drinks = [
       "whip",
       "shot",
       "ice"
-    ]
+    ],
+    "image": "https://asset.menu.starbucks.co.jp/public/sku_images/4524785019232/4524785019232_11_s.jpg"
   },
   {
     "drinkId": "12",
     "name": "キャラメル マキアート (ICE)",
     "name_en": "Caramel Macchiato",
     "price": ["390", "430", "470", "510"],
-    "type": ["size", "decaf", "milk", "syrup", "source", "whip", "shot", "ice"]
+    "type": ["size", "decaf", "milk", "syrup", "source", "whip", "shot", "ice"],
+    "image": "https://asset.menu.starbucks.co.jp/public/sku_images/4524785019232/4524785019232_11_s.jpg"
   },
   {
     "drinkId": "13",
     "name": "カフェアメリカーノ (HOT)",
     "name_en": "Caffè Americano",
     "price": ["310", "350", "390", "430"],
-    "type": ["size", "decaf", "syrup", "source", "whip", "shot"]
+    "type": ["size", "decaf", "syrup", "source", "whip", "shot"],
+    "image": "https://asset.menu.starbucks.co.jp/public/sku_images/4524785000315/4524785000315_11_s.jpg"
   },
   {
     "drinkId": "14",
     "name": "カフェアメリカーノ (ICE)",
     "name_en": "Caffè Americano",
     "price": ["310", "350", "390", "430"],
-    "type": ["size", "decaf", "syrup", "source", "whip", "shot", "ice"]
+    "type": ["size", "decaf", "syrup", "source", "whip", "shot", "ice"],
+    "image": "https://asset.menu.starbucks.co.jp/public/sku_images/4524785000315/4524785000315_11_s.jpg"
   }
 ]
