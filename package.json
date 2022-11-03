@@ -17,5 +17,6 @@
     "eslint-plugin-prettier": "^4.2.1",
     "mocha": "^10.1.0",
     "prettier": "^2.7.1"
-  }
+  },
+  "type": "module"
 }

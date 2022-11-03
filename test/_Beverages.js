@@ -1,7 +1,7 @@
 /* eslint-env mocha */
 
-const { expect } = require("chai");
-const Shop = require("../src/Beverages");
+import { expect } from "chai";
+import { Shop } from "../src/Beverages.js";
 
 describe("Starbucks shop", () => {
   it("should have 14 beverages", () => {
