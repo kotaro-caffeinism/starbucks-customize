@@ -4,10 +4,11 @@ const submit = document.getElementById("submit");
 
 window.onload = () => {
   const shop = new Shop()
-  console.log(shop);
+
   const drinkBtnWrap = document.createElement("div");
-  drinkBtnWrap.setAttribute("id", "button-wrap__drink");
+  drinkBtnWrap.setAttribute("id", "drink-wrap");
   main.appendChild(drinkBtnWrap);
+
   // 1. ドリンク取得
   const drinkData = shop.getAllBeverages();
   createDrinkButton(drinkData, drinkBtnWrap);
@@ -17,15 +18,13 @@ window.onload = () => {
     e.target.classList.toggle("active");
     const drinkId = e.target.dataset.name;
     const targetDrink = drinkData[drinkId];
-
     shop.chooseBeverages(targetDrink.id);
-    console.log(shop);
 
-    const oldEle = document.getElementById("button-wrap__customize");
+    const oldEle = document.getElementById("drink-wrap__customize");
     if (oldEle) oldEle.remove();
 
     const customizeBtnWrap = document.createElement("div");
-    customizeBtnWrap.setAttribute("id", "button-wrap__customize");
+    customizeBtnWrap.setAttribute("id", "drink-wrap__customize");
     main.appendChild(customizeBtnWrap);
     
     targetDrink.type.forEach(type => {
@@ -61,29 +60,39 @@ window.onload = () => {
 
 function createDrinkButton(items, parent) {
   items.forEach((item, i) => {
-    const btn = document.createElement("button");
-    btn.setAttribute("id", item.id);
-    btn.setAttribute("class", "button-wrap__button");
-    btn.dataset.name = i;
-    btn.textContent = item.name;
-    parent.appendChild(btn);
+    const div = document.createElement("div");
+    div.setAttribute("id", item.id);
+    div.setAttribute("class", "drink-wrap__menu");
+    div.dataset.name = i;
+    
+    const img = document.createElement("img");
+    img.src = item.image;
+    img.setAttribute("class", "drink-wrap__img");
+    div.appendChild(img);
+
+    const drinkName = document.createElement("div");
+    drinkName.textContent = item.name;
+    drinkName.setAttribute("class", "drink-wrap__name");
+    div.appendChild(drinkName);
+
+    parent.appendChild(div);
   })
 }
 
 function createCustomizeButton(items, targetDrink, parent) {
   const title = document.createElement("div");
   title.textContent = items.type;
-  title.setAttribute("class", "button-wrap__title");
+  title.setAttribute("class", "drink-wrap__title");
   parent.appendChild(title);
   
   const btnWrap = document.createElement("div");
-  btnWrap.setAttribute("class", "button-wrap__customize");
+  btnWrap.setAttribute("class", "drink-wrap__customize");
   parent.appendChild(btnWrap);
 
   items.choices.forEach((item, i) => {
     const btn = document.createElement("button");
     btn.setAttribute("id", i);
-    btn.setAttribute("class", "button-wrap__button");
+    btn.setAttribute("class", "drink-wrap__button");
 
     if (items.type === "size") {
       btn.dataset.price = targetDrink.price[i];
