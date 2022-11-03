@@ -172,7 +172,19 @@ export default class Shop {
     this.check += sum;
     return this.check;
   }
+
+  checkout() {
+    return {
+      beverage: `${this.selected.beverage.name} ${this.selected.customize}`,
+      check: this.check
+    };
+  }
 }
 
-// module.exports = Shop;
-// export default Shop;
+// const shop = new Shop();
+// shop.chooseBeverages(5)
+// shop.memorizeName("Short")
+// shop.calcSum(100)
+// shop.memorizeName("アーモンドミルク")
+// shop.calcSum(100)
+// console.log(shop.checkout())
