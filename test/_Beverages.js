@@ -13,11 +13,10 @@ describe("Starbucks shop", () => {
       const shop = new Shop();
       shop.chooseBeverage(1);
       expect(shop.selected.beverage).to.deep.equal({
-        id: "1",
-        name: "ドリップコーヒー (HOT)",
-        price: ["290", "330", "370", "410"],
-        disabledCustomize: ["ice", "form milk", "ristretto", "milk", "hot"],
-        discountCustomize: null,
+        "id": "1",
+        "name": "ドリップコーヒー (HOT)",
+        "price": ["290", "330", "370", "410"],
+        "type": ["size", "decaf", "syrup", "source", "whip", "shot"]
       });
     });
   });
