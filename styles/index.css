@@ -7,19 +7,7 @@ button {
 #drink-wrap {
   display: flex;
   flex-wrap: wrap;
-  margin: 20px 0;
-}
-
-.customize-wrap__title {
-  font-size: 24px;
-  margin-bottom: 10px;
-  border-bottom: 2px solid #1e3932;
-  padding-bottom: 3px;
-}
-.customize-wrap__buttons {
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 25px;
+  margin: 20px 10px;
 }
 .drink-wrap__menu {
   width: 18%;
@@ -46,7 +34,6 @@ button {
 }
 #final-wrap__name {
   margin: 0 10px 10px;
-  /* margin-bottom: 10px; */
 }
 #final-wrap__price {
   font-size: 24px;
@@ -54,10 +41,21 @@ button {
 }
 
 #customize-wrap {
-  height: 60vh;
+  height: 55vh;
   padding: 20px 5px;
   overflow-y: scroll;
   background: rgba(0,0,0,.05);
+}
+.customize-wrap__title {
+  font-size: 24px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #1e3932;
+  padding-bottom: 3px;
+}
+.customize-wrap__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
 }
 
 #submit {
