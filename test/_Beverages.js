@@ -13,37 +13,50 @@ describe("Starbucks shop", () => {
       const shop = new Shop();
       expect(shop.getAllBeverage().length).to.equal(14);
       expect(shop.getAllBeverage()[0].name).to.equal("ドリップコーヒー (HOT)");
-    })
-  })
+    });
+  });
   describe("chooseBeverage", () => {
     it("should memorize chosen beverage", () => {
       const shop = new Shop();
       expect(shop.chooseBeverage(1)).to.deep.equal({
-        "id": "1",
-        "name": "ドリップコーヒー (HOT)",
-        "price": ["290", "330", "370", "410"],
-        "type": ["size", "decaf", "syrup", "source", "whip", "shot"]
+        id: "1",
+        name: "ドリップコーヒー (HOT)",
+        price: ["290", "330", "370", "410"],
+        type: ["size", "decaf", "syrup", "source", "whip", "shot"],
       });
       expect(shop.selected.beverage).to.deep.equal({
-        "id": "1",
-        "name": "ドリップコーヒー (HOT)",
-        "price": ["290", "330", "370", "410"],
-        "type": ["size", "decaf", "syrup", "source", "whip", "shot"]
+        id: "1",
+        name: "ドリップコーヒー (HOT)",
+        price: ["290", "330", "370", "410"],
+        type: ["size", "decaf", "syrup", "source", "whip", "shot"],
       });
     });
   });
-  describe("chooseSize", () => {
+  describe("getCustomize", () => {
     it("should choose Beverage's size", () => {
       const shop = new Shop();
-      shop.chooseBeverage(1);
-      expect(shop.chooseSize(0)).to.equal("Short");
-      expect(shop.selected.size).to.equal("Short");
-    });
-    it("should memorize chosen beverage's price", () => {
-      const shop = new Shop();
-      shop.chooseBeverage(1);
-      shop.chooseSize(3);
-      expect(shop.check).to.equal(410);
+      const beverage = shop.chooseBeverage(1);
+      const customizeTypes = beverage.type;
+
+      expect(shop.getCustomize(customizeTypes[0])).to.deep.equal({
+        type: "size",
+        choices: [
+          "Short サイズ",
+          "Tall サイズ",
+          "Grande サイズ",
+          "Venti サイズ",
+        ],
+        name: ["Short", "Tall", "Grande", "Venti"],
+        nameOder: 1,
+      });
+
+      expect(shop.getCustomize(customizeTypes[1])).to.deep.equal({
+        type: "decaf",
+        choices: ["変更しない", "ディカフェに変更する"],
+        name: ["", "ディカフェ"],
+        nameOder: 2,
+        price: [0, 50],
+      });
     });
   });
 });
