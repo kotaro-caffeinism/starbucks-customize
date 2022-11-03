@@ -1,4 +1,4 @@
-[
+window.drinks = [
   {
     "drinkId": "1",
     "name": "ドリップコーヒー (HOT)",

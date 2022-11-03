@@ -1,10 +1,5 @@
-import fs from "fs";
-
-const jsonDrinks = fs.readFileSync("./data/beverages.json");
-const drinks = JSON.parse(jsonDrinks);
-
-const jsonQuestions = fs.readFileSync("./data/questions.json");
-const questions = JSON.parse(jsonQuestions);
+const drinks = window.drinks;
+const questions = window.questions;
 
 class Beverage {
   constructor(id, name, price) {
@@ -118,7 +113,7 @@ const caffèAmericanoIce = new StarbucksBeverage(
   drinks[13].type
 );
 
-export class Shop {
+export default class Shop {
   constructor() {
     this.beverages = [
       dripCoffee,
