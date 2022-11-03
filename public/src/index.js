@@ -124,10 +124,19 @@ function createCustomizeButton(items, targetDrink, parent) {
     
     const price = document.createElement("span");
     price.setAttribute("class", "customize-wrap__price");
-
+    
     if (items.type === "size") {
       btn.dataset.price = targetDrink.price[i];
       price.textContent = ` (${targetDrink.price[i]}円)`;
+    } else if (items.type === "milk" && targetDrink.id === "3") {
+        btn.dataset.price = 0;
+        price.textContent = " (0円)";
+    } else if (items.type === "milk" && targetDrink.id === "4" && i !== 6) {
+      btn.dataset.price = 0;
+      price.textContent = " (0円)";
+    } else if (items.type === "milk" && targetDrink.id === "5" && i !== 6) {
+      btn.dataset.price = 0;
+      price.textContent = " (0円)";
     } else {
       btn.dataset.price = items.price[i];
       price.textContent = ` (${items.price[i]}円)`;
