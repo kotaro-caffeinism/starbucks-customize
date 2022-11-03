@@ -1,4 +1,4 @@
-const fs = require("fs");
+import fs from "fs";
 
 const jsonDrinks = fs.readFileSync("./data/beverages.json");
 const drinks = JSON.parse(jsonDrinks);
@@ -118,7 +118,7 @@ const caffèAmericanoIce = new StarbucksBeverage(
   drinks[13].type
 );
 
-class Shop {
+export class Shop {
   constructor() {
     this.beverages = [
       dripCoffee,
@@ -164,6 +164,20 @@ class Shop {
       if (obj.type === type) return obj;
     }
   }
+
+  memorizeName(customize) {
+    this.selected.customize = this.selected.customize
+      ? `${this.selected.customize} ${customize}`
+      : customize;
+
+    return `${this.selected.beverage.name} ${this.selected.customize}`;
+  }
+
+  calcSum(sum) {
+    this.check += sum;
+    return this.check;
+  }
 }
 
-module.exports = Shop;
+// module.exports = Shop;
+// export default Shop;
