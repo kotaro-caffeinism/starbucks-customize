@@ -15,8 +15,11 @@ window.onload = () => {
 
   // 2. ドリンクに応じたカスタマイズ
   drinkBtnWrap.addEventListener("click", (e) => {
-    e.target.classList.toggle("active");
-    const drinkId = e.target.dataset.name;
+    const isTarget = e.target.parentElement.classList.contains("drink-wrap__menu");
+    if (!isTarget) return;
+
+    e.target.parentElement.classList.toggle("drink-active");
+    const drinkId = e.target.parentElement.dataset.name;
     const targetDrink = drinkData[drinkId];
     shop.chooseBeverages(targetDrink.id);
 

@@ -47,12 +47,21 @@ button {
   padding: 5px;
 }
 #submit:hover {
-  background-color: rgb(112, 208, 159);
+  background-color: #008000;
+  color: #fff;
   border: 1px solid #fff;
 }
 
+.drink-active {
+  width: 19%;
+  max-width: 160px;
+  box-shadow: 3px 3px 3px 3px rgba(0,0,0,0.3);
+}
+.drink-active .drink-wrap__name {
+  padding: 2px;
+}
 .active {
-  background: green;
-  color: white;
+  background: #008000;
+  color: #fff;
 }
 
