@@ -1,7 +1,7 @@
 /* eslint-env mocha */
 
 import { expect } from "chai";
-import { Shop } from "../src/Beverages.js";
+import Shop from "../public/src/Beverages.js";
 
 describe("Starbucks shop", () => {
   it("should have 14 beverages", () => {
