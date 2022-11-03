@@ -15,7 +15,7 @@ Starbucksで販売されている14種類のドリンクをカスタマイズし
   ``` zsh
   git clone git@github.com:kotaro-caffeinism/starbucks-customize.git
   ```
-2. `index.html` をブラウザで開いてください。`"access to script from origin 'null' has been blocked by CORS policy"` と表示されうまくいかない場合は、LiveShare を使ってアプリを起動してください。
+2. `index.html` をブラウザで開いてください。`"access to script from origin 'null' has been blocked by CORS policy"` と表示されうまくいかない場合は、[Live Server](https://github.com/ritwickdey/vscode-live-server) などを使ってアプリを起動してください。
 3. 以下のような画面が表示されればOKです🥳 ご注文をどうぞ！
 
 ![アプリのスクリーンショット](https://user-images.githubusercontent.com/5979966/199770895-af6bb4c2-331b-47c5-910c-3bdd32392379.png)
