@@ -150,16 +150,16 @@ class Shop {
     };
   }
 
-  getAllBeverage() {
+  getAllBeverages() {
     return this.beverages;
   }
 
-  chooseBeverage(id) {
+  chooseBeverages(id) {
     this.selected.beverage = this.beverages[id - 1];
     return this.selected.beverage;
   }
 
-  getCustomize(type) {
+  getCustomizes(type) {
     for (const obj of questions) {
       if (obj.type === type) return obj;
     }

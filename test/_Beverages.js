@@ -8,17 +8,17 @@ describe("Starbucks shop", () => {
     const shop = new Shop();
     expect(shop.beverages.length).to.equal(14);
   });
-  describe("getAllBeverage", () => {
+  describe("getAllBeverages", () => {
     it("should return all beverage", () => {
       const shop = new Shop();
-      expect(shop.getAllBeverage().length).to.equal(14);
-      expect(shop.getAllBeverage()[0].name).to.equal("ドリップコーヒー (HOT)");
+      expect(shop.getAllBeverages().length).to.equal(14);
+      expect(shop.getAllBeverages()[0].name).to.equal("ドリップコーヒー (HOT)");
     });
   });
-  describe("chooseBeverage", () => {
+  describe("chooseBeverages", () => {
     it("should memorize chosen beverage", () => {
       const shop = new Shop();
-      expect(shop.chooseBeverage(1)).to.deep.equal({
+      expect(shop.chooseBeverages(1)).to.deep.equal({
         id: "1",
         name: "ドリップコーヒー (HOT)",
         price: ["290", "330", "370", "410"],
@@ -32,13 +32,13 @@ describe("Starbucks shop", () => {
       });
     });
   });
-  describe("getCustomize", () => {
+  describe("getCustomizes", () => {
     it("should choose Beverage's size", () => {
       const shop = new Shop();
-      const beverage = shop.chooseBeverage(1);
+      const beverage = shop.chooseBeverages(1);
       const customizeTypes = beverage.type;
 
-      expect(shop.getCustomize(customizeTypes[0])).to.deep.equal({
+      expect(shop.getCustomizes(customizeTypes[0])).to.deep.equal({
         type: "size",
         choices: [
           "Short サイズ",
@@ -50,7 +50,7 @@ describe("Starbucks shop", () => {
         nameOder: 1,
       });
 
-      expect(shop.getCustomize(customizeTypes[1])).to.deep.equal({
+      expect(shop.getCustomizes(customizeTypes[1])).to.deep.equal({
         type: "decaf",
         choices: ["変更しない", "ディカフェに変更する"],
         name: ["", "ディカフェ"],
