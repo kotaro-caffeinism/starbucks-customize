@@ -47,7 +47,11 @@ window.onload = () => {
       const customizePrice = e.target.dataset.price;
       shop.memorizeName(customizeId);
       shop.calcSum(Number(customizePrice));
-      e.target.classList.toggle("active")
+
+    const isTarget = e.target.classList.contains("customize-wrap__button");
+    if (!isTarget) return;
+
+    e.target.classList.toggle("active")
     });
   });
   
@@ -108,7 +112,7 @@ function createCustomizeButton(items, targetDrink, parent) {
   parent.appendChild(btnWrap);
 
   items.choices.forEach((item, i) => {
-    const btn = document.createElement("button");
+    const btn = document.createElement("div");
     btn.setAttribute("id", i);
     btn.setAttribute("class", "customize-wrap__button");
 
