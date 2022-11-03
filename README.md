@@ -7,7 +7,7 @@ Starbucksで販売されている14種類のドリンクをカスタマイズし
 
 [starbucks-customize.surge.sh](https://starbucks-customize.surge.sh/)  
 
-<img src="https://user-images.githubusercontent.com/5979966/199770895-af6bb4c2-331b-47c5-910c-3bdd32392379.png" alt="トップページ" width="45%"> <img src="https://user-images.githubusercontent.com/5979966/199770918-dacfed55-4bcf-419b-84dc-817b5c368522.png" alt="投稿ページ" width="45%">
+<img src="https://user-images.githubusercontent.com/5979966/199855013-848ae734-da2a-425c-9b54-64963b82200d.png" alt="トップページ" width="47%"> <img src="https://user-images.githubusercontent.com/5979966/199855018-6e7332ad-c5bd-4ab7-bec9-c60365a114a0.png" alt="投稿ページ" width="47%">
 
 ## このアプリの使い方
 
@@ -18,7 +18,7 @@ Starbucksで販売されている14種類のドリンクをカスタマイズし
 2. `index.html` をブラウザで開いてください。`"access to script from origin 'null' has been blocked by CORS policy"` と表示されうまくいかない場合は、[Live Server](https://github.com/ritwickdey/vscode-live-server) などを使ってアプリを起動してください。
 3. 以下のような画面が表示されればOKです🥳 ご注文をどうぞ！
 
-![アプリのスクリーンショット](https://user-images.githubusercontent.com/5979966/199770895-af6bb4c2-331b-47c5-910c-3bdd32392379.png)
+![アプリのスクリーンショット](https://user-images.githubusercontent.com/5979966/199855013-848ae734-da2a-425c-9b54-64963b82200d.png)
 
 ## 使用技術
 
