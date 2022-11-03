@@ -1,0 +1,34 @@
+#button-wrap,
+#button-wrap__drink {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap
+}
+#submit {
+  text-align: center;
+  border: 1px solid #333;
+  margin: 30px 30%;
+  padding: 5px;
+}
+#submit:hover {
+  background-color: rgb(112, 208, 159);
+  border: none;
+}
+.button-wrap__customize {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.button-wrap__button {
+  width: 23%;
+  height: 60px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+#button-wrap__customize {
+  margin-top: 30px;
+}
+.active {
+  background: green;
+  color: white;
+}
