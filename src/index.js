@@ -13,11 +13,15 @@ window.onload = () => {
 
   // 2. ドリンクに応じたカスタマイズ
   drinkBtnWrap.addEventListener('click', (e) => {
+    e.target.classList.toggle("active")
     const drinkId = e.target.dataset.name;
     const targetDrink = drinkData[drinkId];
 
     shop.chooseBeverages(targetDrink.id);
     console.log(shop);
+
+    const oldEle = document.getElementById("button-wrap__customize");
+    if (oldEle) oldEle.remove();
 
     const customizeBtnWrap = document.createElement("div");
     customizeBtnWrap.setAttribute("id", "button-wrap__customize")
@@ -25,19 +29,17 @@ window.onload = () => {
     
     targetDrink.type.forEach(type => {
       const customizeData = shop.getCustomizes(type);
-      console.log(customizeData);
-
-      createCustomizeButton(customizeData.choices, customizeBtnWrap);
+      createCustomizeButton(customizeData, customizeBtnWrap);
     })
 
     customizeBtnWrap.addEventListener('click', (e) => {
-      console.log(e.target);
+      const customizeId = e.target.dataset.name;
+      shop.memorizeName(customizeId)
       e.target.classList.toggle("active")
     });
   });
   
 }
-
 
 function createButton(items, parent) {
   items.forEach((item, i) => {
@@ -51,16 +53,20 @@ function createButton(items, parent) {
 }
 
 function createCustomizeButton(items, parent) {
-  const btnWrap = document.createElement("div");
-    btnWrap.setAttribute("class", "button-wrap__customize")
-    parent.appendChild(btnWrap);
+  const title = document.createElement("div");
+  title.textContent = items.type;
+  title.setAttribute("class", "button-wrap__title");
+  parent.appendChild(title);
   
-  items.forEach((item, i) => {
+  const btnWrap = document.createElement("div");
+  btnWrap.setAttribute("class", "button-wrap__customize");
+  parent.appendChild(btnWrap);
+
+  items.choices.forEach((item, i) => {
     const btn = document.createElement("button");
-    console.log(item);
     btn.setAttribute("id", i)
     btn.setAttribute("class", "button-wrap__button")
-    btn.dataset.name = i;
+    btn.dataset.name = items.name[i];
     btn.textContent = item;
     btnWrap.appendChild(btn);
   })
