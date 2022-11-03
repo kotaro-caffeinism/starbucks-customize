@@ -1,4 +1,5 @@
 import Shop from "./Beverages.js";
+
 const main = document.getElementById("main");
 const submit = document.getElementById("submit");
 const reload = document.getElementById("reload");
@@ -97,6 +98,11 @@ function createDrinkButton(items, parent) {
     drinkName.setAttribute("class", "drink-wrap__name");
     div.appendChild(drinkName);
 
+    const drinkPrice = document.createElement("div");
+    drinkPrice.textContent = `${item.price[0]}〜${item.price[3]}円`;
+    drinkPrice.setAttribute("class", "drink-wrap__price");
+    div.appendChild(drinkPrice);
+
     parent.appendChild(div);
   })
 }
@@ -115,14 +121,30 @@ function createCustomizeButton(items, targetDrink, parent) {
     const btn = document.createElement("div");
     btn.setAttribute("id", i);
     btn.setAttribute("class", "customize-wrap__button");
-
+    
+    const price = document.createElement("span");
+    price.setAttribute("class", "customize-wrap__price");
+    
     if (items.type === "size") {
       btn.dataset.price = targetDrink.price[i];
+      price.textContent = ` (${targetDrink.price[i]}円)`;
+    } else if (items.type === "milk" && targetDrink.id === "3") {
+        btn.dataset.price = 0;
+        price.textContent = " (0円)";
+    } else if (items.type === "milk" && targetDrink.id === "4" && i !== 6) {
+      btn.dataset.price = 0;
+      price.textContent = " (0円)";
+    } else if (items.type === "milk" && targetDrink.id === "5" && i !== 6) {
+      btn.dataset.price = 0;
+      price.textContent = " (0円)";
     } else {
       btn.dataset.price = items.price[i];
+      price.textContent = ` (${items.price[i]}円)`;
     }
     btn.dataset.name = items.name[i];
     btn.textContent = item;
+
+    btn.appendChild(price);
     btnWrap.appendChild(btn);
   })
 }
